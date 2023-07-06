@@ -1,0 +1,50 @@
+Bare minimum requirements for v1 of singpraise.cm
+
+Users
+
+    Singer (client)
+    Admin (manages the system)
+    Publisher (uploads song sheets)
+
+Publication: A publication is content that is uploaded/submitted by a publisher. It is made up of;
+
+    Title
+    Description
+    Composer
+    Category
+    Song sheet (pdf)
+    Recording (optional)
+    Publisher
+
+FEATURES PER USER TYPE
+
+    Singer can
+
+    See list of publications
+    Search publication by
+        Title
+        Composer
+        Category
+    View full publication
+    Open on the web browser, the publication (pdf)
+    Download the pdf of the publication
+    If audio available, play the publication on the brower
+
+    Publisher can
+
+    Publish a new music sheet (for v1, they don't need an account)
+    Get an email when publication is approved/rejected
+
+    Admin can
+
+    See list of publications (new, pending, approved, deleted)
+    Approve / decline a publication
+
+PROPOSED TECH STACK
+
+    React JS / Vuew JS / Angular JS framework for the frontend
+    PHP Laravel / Node / Django with [MySQL / MongoDB] for the RESTFul
+
+API -or- Selfhosted backend like Firebase / Parse
+The tech stack will finally be choosen based on the strength of the team.
+
