@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 12, 2023 at 12:51 AM
+-- Generation Time: Jul 20, 2023 at 02:23 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -33,6 +33,19 @@ CREATE TABLE `categories` (
   `description` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `title`, `description`, `created_at`) VALUES
+(1, 'Entrance', 'Songs suitable for start of celebrations', '2023-07-17 22:30:20'),
+(3, 'Acclamation', 'song before the provlamation of the Gospel', '2023-07-17 22:48:41'),
+(4, 'Adoration', 'Suitable before the Blessed Sacrament', '2023-07-17 22:50:03'),
+(5, 'Glory', 'Glory of God', '2023-07-17 22:51:58'),
+(6, 'Kyrie', 'Lord have mercy', '2023-07-17 23:07:26'),
+(7, 'Pater Noster', 'The Lord\'s prayer', '2023-07-18 17:09:18'),
+(8, 'Sanctus', 'The Holiness of God', '2023-07-18 17:12:11');
 
 -- --------------------------------------------------------
 
@@ -77,6 +90,13 @@ CREATE TABLE `songs` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `songs`
+--
+
+INSERT INTO `songs` (`id`, `author`, `musician`, `title`, `status`, `categories_id`, `created_at`) VALUES
+(1, 'Damen', 'Damen', 'Great things', 'Complete', 4, '2023-07-18 17:57:00');
+
 -- --------------------------------------------------------
 
 --
@@ -92,6 +112,13 @@ CREATE TABLE `song_items` (
   `song_id` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `song_items`
+--
+
+INSERT INTO `song_items` (`id`, `text`, `sound`, `picture`, `video`, `song_id`, `created_at`) VALUES
+(1, 'Ref:\r\nGreat things have we promised you Oh God\r\nYet greater are the things that you\'ve promised to us Lord\r\n\r\n1.\r\nwe promise to be simple friars Oh God\r\nYet greater are the things that you\'ve promised to us Lord', NULL, NULL, NULL, 1, '2023-07-18 17:59:52');
 
 -- --------------------------------------------------------
 
@@ -169,7 +196,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `comments`
@@ -187,13 +214,13 @@ ALTER TABLE `history`
 -- AUTO_INCREMENT for table `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `song_items`
 --
 ALTER TABLE `song_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
